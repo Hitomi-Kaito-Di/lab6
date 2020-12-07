@@ -1,0 +1,88 @@
+#include <string>
+#include <iostream>
+#include<math.h>
+#include<windows.h>
+using namespace std;
+class Human
+{
+private:
+    string m_name;
+    int m_age;
+
+public:
+    void GetData() {
+        cout << "Введите имя: ";
+        cin >> m_name;
+        cout << "Введите возраст: ";
+        cin >> m_age;
+        cout << "\nИмя: " << m_name;
+        cout << "\nВозраст: " << m_age << endl;
+        cout << "-------------------------------" << endl;
+    }
+};
+
+    class Employee
+    {
+    private:
+        string m_employer;
+        double m_pay;
+
+    public:
+        void GetData() {
+            cout << "Введите место работы: ";
+            cin >> m_employer;
+            cout << "Введите заработную плату: ";
+            cin >> m_pay;
+            cout << "\nМесто работы: " << m_employer;
+            cout << "\nЗаработная плата: " << m_pay << endl;
+            cout << "-------------------------------" << endl;
+        }
+    };
+
+        class Teacher : public Human, public Employee
+        {
+        private:
+            string m_teachersGrade;
+
+        public:
+            void GetData() {
+                cout << "Введите степень: ";
+                cin >> m_teachersGrade;
+                cout << "\nСтепень: " << m_teachersGrade << endl;;
+                cout << "-------------------------------" << endl;
+            }
+
+        };
+
+        class Gender : private Human, public Employee
+        {
+        private:
+            string gender;
+
+        public:
+            void GetData() {
+                cout << "Введите пол: ";
+                cin >> gender;
+                cout << "\nПол: " << gender << endl;
+                cout << "-------------------------------" << endl;
+            }
+
+        };
+
+        int main()
+        {
+            setlocale(0, "");;
+            SetConsoleCP(1251);
+            SetConsoleOutputCP(1251);
+            Human human;
+            Employee employee;
+            Teacher teacher;
+            Gender g;
+         
+            human.GetData();
+            employee.GetData();
+            teacher.GetData();
+            g.GetData();
+            
+            return 0;
+        }
